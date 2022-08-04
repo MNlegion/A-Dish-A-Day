@@ -32,6 +32,12 @@ const typeDefs = gql`
       
     }
     
+
+
+
+    type Mutation {
+        addTag(tagName: String!): Tag
+    }
 `;
 // export the typeDefs
 module.exports = typeDefs;

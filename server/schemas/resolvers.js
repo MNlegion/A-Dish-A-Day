@@ -19,6 +19,13 @@ const resolvers = {
       recipe: async () => {
         return Recipe.find();
       }
+    },
+
+    Mutation: {
+      addTag: async (parent, args) => {
+        const newTag = await Tag.create(args);
+        return newTag;
+      }
     }
   };
 
