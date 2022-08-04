@@ -10,7 +10,7 @@ const typeDefs = gql`
         tags: [Tag]
         tag(tagName: String!): Tag
         users: [User]
-        recipe: [Recipe]
+        
     }
 
 
@@ -24,13 +24,6 @@ const typeDefs = gql`
         password: String
     }
     
-    type Recipe {
-        recipeTitle: String
-        img: String
-        description: String
-        author: String
-      
-    }
     
 
 

@@ -15,9 +15,6 @@ const resolvers = {
       },
       users: async () => {
         return User.find();
-      },
-      recipe: async () => {
-        return Recipe.find();
       }
     },
 
