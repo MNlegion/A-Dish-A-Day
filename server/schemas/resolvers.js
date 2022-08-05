@@ -15,7 +15,7 @@ const resolvers = {
       },
       users: async () => {
         return User.find()
-        .populate("favorite");
+        .populate("friends");
       },
       recipes: async () => {
         return Recipe.find();

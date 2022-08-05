@@ -24,7 +24,6 @@ const recipeSchema = new Schema(
     },
     author: {
       type: String,
-
     },
     review: [
       {
