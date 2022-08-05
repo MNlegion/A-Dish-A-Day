@@ -1,4 +1,4 @@
-const { Tag, Recipe, User } = require("../models");
+const { Tag, Recipe, Review, User } = require("../models");
 
 const { AuthenticationError } = require('apollo-server-express');
 
@@ -14,14 +14,18 @@ const resolvers = {
         return Tag.findOne({tagName});
       },
       users: async () => {
-        return User.find();
+        return User.find()
+        .populate("favorite");
       },
       recipes: async () => {
         return Recipe.find();
       },
       recipe: async (parent, {recipeTitle}) => {
         return Tag.findOne({recipeTitle});
-      }
+      },
+      reviews: async () => {
+        return Review.find();
+      },
     }, 
 
     

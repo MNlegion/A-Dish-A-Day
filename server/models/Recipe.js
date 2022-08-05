@@ -19,29 +19,23 @@ const recipeSchema = new Schema(
       required: true,
       trim: true,
     },
-    author: {
-      type: String,
-      minlength: 1,
-    },
     img: {
       type: String,
     },
-    ingredient: {
-      //WHEN PARSING INTO ARRAY, SPLIT BY COMMA i.e 1 clobe of garlic, 2 glasses of milk ->
-      //1 clobe of garlic
-      //2 glasses of milk
-      type: Array,
-    },
-    preperationStep: {
-      //contains actual cooking instructions
-      type: Array, //retrieve steps and auto increment step count ie 1. 1 clobe of garlic, 2. 2 glasses of milk
+    author: {
+      type: String,
 
-      trim: true,
     },
+    review: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Review'
+      }
+    ],
     tag: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Tag",
+        ref: "Tag"
       },
     ],
   },

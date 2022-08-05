@@ -12,6 +12,7 @@ const typeDefs = gql`
         users: [User]
         recipes: [Recipe]
         recipe(recipeTitle: String!): Recipe
+        reviews: [Review]
     }
 
     type Tag {
@@ -19,19 +20,31 @@ const typeDefs = gql`
     }
 
     type User {
+        _id: ID
         username: String
         email: String
         password: String
+        favorite: [Recipe]
     }
     
+    type Review {
+        _id: ID
+        text: String
+       
+    }
+
     type Recipe {
+        _id: ID
         recipeTitle: String
         description: String
         author: String
+        reviews: [Review]
+        tags: [Tag]
         img: String
         
     }
     
+   
 `;
 // export the typeDefs
 module.exports = typeDefs;
