@@ -11,12 +11,9 @@ const typeDefs = gql`
         tag(tagName: String!): Tag
         users: [User]
         recipes: [Recipe]
-<<<<<<< HEAD
         recipe(recipeTitle: String!): Recipe
         reviews: [Review]
-=======
-        recipe(_id: String!): Recipe
->>>>>>> 554f803d8f8653332041b4c14e578f083fc3ecd6
+
     }
 
 
@@ -39,11 +36,7 @@ const typeDefs = gql`
     }
 
     type Recipe {
-<<<<<<< HEAD
-        _id: ID
-=======
         _id: String
->>>>>>> 554f803d8f8653332041b4c14e578f083fc3ecd6
         recipeTitle: String
         description: String
         author: String

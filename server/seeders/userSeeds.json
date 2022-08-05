@@ -5,16 +5,7 @@
     {
         "username" : "Cris", 
         "email" : "Waters59@hotmail.com", 
-        "password" : "kGjRfUNWUIRwfS_", 
-        "favorite": [
-            {
-                "recipeTitle" : "the best meal never maid",
-                "description" : "Chicken Pot Pie",
-                "author" : "some old guy name Andre",
-                "img" : ""
-                
-            }
-        ]   
+        "password" : "kGjRfUNWUIRwfS_"
     },
     {
         "username" : "Justin", 
