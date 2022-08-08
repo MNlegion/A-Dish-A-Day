@@ -40,7 +40,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   }),
 }));
 
-export default function RecipeCard({recipe}) {
+export default function RecipeCard({ recipe, searchParams, setSearchParams }) {
   const [expanded, setExpanded] = React.useState(false);
   const [addFavorite, { data, loading, error }] = useMutation(ADD_FAVORITE);
 
@@ -84,6 +84,7 @@ export default function RecipeCard({recipe}) {
         //   </IconButton>
         // }
         title={recipe.recipeTitle}
+        onClick={setSearchParams(recipe._id)}
       />
       <CardMedia
         component="img"

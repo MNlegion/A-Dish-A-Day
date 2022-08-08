@@ -12,7 +12,7 @@ import { QUERY_ALL_RECIPES, QUERY_RECIPE_ID } from '../../utils/queries';
 import SecondayNav from '../../components/SecondaryNav';
 import recipeStyles from './recipes.module.css';
 
-export default function RecipeSearch() {
+export default function RecipeSearch({ searchParams, setSearchParams }) {
 
     const [recipes, setRecipes] = useState([
       {title:"the title", ingredients: "ingredients", instructions: "instructions", author: "author", image:{src:"broken/image/link.jpg", alt:"broken iamge text"}}
@@ -30,6 +30,7 @@ export default function RecipeSearch() {
       setFilteredRecipes(data.recipes)
     }, [data])
     
+    console.log(data);
 
     // useEffect(() => {
     //   if (!data) return
@@ -90,7 +91,7 @@ export default function RecipeSearch() {
         </FormGroup>
         <div className={recipeStyles.all}>
         {data.recipes.map((recipe, index) => {
-          return <RecipeCard recipe={recipe} key={index} />
+          return <RecipeCard recipe={recipe} key={index} searchParams={searchParams} setSearchParam={setSearchParams} />
         })}
         </div>
 

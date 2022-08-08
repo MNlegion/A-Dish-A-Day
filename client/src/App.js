@@ -11,6 +11,7 @@ import NoMatch from '../src/pages/NoMatch';
 import Dashboard from './pages/Dashboard';
 import RecipeSearch from './pages/AllRecipes';
 import SingleRecipe from './pages/SingleRecipe';
+import RecipeRouter from './pages/RecipeRouter';
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
@@ -46,7 +47,7 @@ function App() {
             path="/about"
             element={<About />}
           />
-          <Route 
+          {/* <Route 
             path="/dashboard"
             element={<Dashboard/>}
           />
@@ -57,6 +58,10 @@ function App() {
           <Route 
             path="/singlerecipe"
             element={<SingleRecipe />}
+          /> */}
+          <Route 
+            path="/recipe"
+            element={<RecipeRouter />}
           />
           <Route 
             path="*"
