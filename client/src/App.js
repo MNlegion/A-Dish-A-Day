@@ -60,7 +60,7 @@ function App() {
             element={<SingleRecipe />}
           /> */}
           <Route 
-            path="/recipe"
+            path="/recipe/*"
             element={<RecipeRouter />}
           />
           <Route 

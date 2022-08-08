@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useSearchParams } from 'react-router-dom';
+import { Routes, Route, useSearchParams } from 'react-router-dom';
 import Dashboard from '../Dashboard';
 import RecipeSearch from '../AllRecipes';
 import SingleRecipe from '../SingleRecipe';
@@ -25,7 +25,7 @@ function RecipeRouter() {
             />}
           />
           <Route 
-            path="/*"
+            path="/id"
             element={<SingleRecipe />}
           />
           <Route 

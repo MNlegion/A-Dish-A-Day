@@ -1,6 +1,6 @@
 //working 8/4//
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
@@ -21,8 +21,10 @@ import Rating from '@mui/material/Rating';
 import Ratings from '../Rating';
 import recipeStyles from './recipe.module.css';
 import Auth from '../../utils/auth';
-import { useMutation } from '@apollo/client';
+import { serializeFetchParameter, useMutation } from '@apollo/client';
 import { ADD_FAVORITE } from '../../utils/mutations';
+import SingleRecipe from '../../pages/SingleRecipe';
+
 
 //recipe card//
 interface ExpandMoreProps extends IconButtonProps {
@@ -43,6 +45,21 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 export default function RecipeCard({ recipe, searchParams, setSearchParams }) {
   const [expanded, setExpanded] = React.useState(false);
   const [addFavorite, { data, loading, error }] = useMutation(ADD_FAVORITE);
+  const [selectedRecipe, setSelectedRecipe] = useState();
+
+  // useEffect(() => {
+  //   if (selectedRecipe) {
+  //     return 
+  //   }
+  // }, [searchParams])
+
+  function renderSinglePage(e) {
+    console.log('hello', recipe._id)
+    console.log(e.target.value)
+    // let params = serializeFetchParameter(e.target.value);
+    // console.log(params)
+    // setSearchParams({ id: `${recipe._id}`} )
+  }
 
   const handleFavoriteClick = () => {
     if (!Auth.loggedIn()) {
@@ -84,7 +101,8 @@ export default function RecipeCard({ recipe, searchParams, setSearchParams }) {
         //   </IconButton>
         // }
         title={recipe.recipeTitle}
-        onClick={setSearchParams(recipe._id)}
+        // onClick={() => setSearchParams(recipe._id)}
+        onClick={renderSinglePage}
       />
       <CardMedia
         component="img"
